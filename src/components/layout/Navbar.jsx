@@ -1,0 +1,82 @@
+import { motion } from "framer-motion";
+
+const NAV_LINKS = ["Home", "Plants Type▾", "More", "Contact"];
+
+const ICON_URLS = {
+  search:
+    "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/n4iBIQ3cmY/am4mgv3n_expires_30_days.png",
+  cart:
+    "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/n4iBIQ3cmY/7k8eq66u_expires_30_days.png",
+};
+
+function Navbar() {
+  return (
+    <motion.nav 
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+      className="flex items-center px-4 md:px-8 lg:px-[40px] xl:px-[57px] py-4 lg:py-5 2xl:py-6 mb-4 lg:mb-8 bg-[#1B231680]"
+    >
+      {/* Brand */}
+      <div className="flex items-center gap-2 xl:gap-3 cursor-pointer">
+        <img
+          src="/logo.png"
+          className="w-10 h-10 lg:w-12 lg:h-12 xl:w-14 xl:h-14 2xl:w-16 2xl:h-16 object-contain"
+          alt="Planto logo"
+        />
+        <span className="text-white text-xl lg:text-2xl xl:text-3xl 2xl:text-[34px] font-bold tracking-wide">
+          Planto.
+        </span>
+      </div>
+
+      <div className="flex-1" />
+
+      {/* Desktop nav links */}
+      <motion.div 
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: {},
+          visible: { transition: { staggerChildren: 0.1, delayChildren: 0.5 } }
+        }}
+        className="hidden lg:flex items-center gap-6 xl:gap-9 2xl:gap-12"
+      >
+        {NAV_LINKS.map((link) => (
+          <motion.span
+            key={link}
+            variants={{
+              hidden: { opacity: 0, y: -10 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
+            }}
+            whileHover={{ scale: 1.05, color: "#4ADE80", textShadow: "0px 0px 10px rgba(74,222,128,0.3)" }}
+            className="text-white text-[13px] xl:text-sm 2xl:text-base cursor-pointer transition-colors"
+          >
+            {link}
+          </motion.span>
+        ))}
+      </motion.div>
+
+      <div className="hidden lg:block flex-1" />
+
+      {/* Desktop icons + Hamburger */}
+      <div className="flex items-center gap-5 xl:gap-6">
+        <img
+          src={ICON_URLS.search}
+          className="hidden lg:block w-[18px] h-[18px] xl:w-[20px] xl:h-[20px] 2xl:w-[24px] 2xl:h-[24px] object-fill cursor-pointer"
+          alt="Search"
+        />
+        <img
+          src={ICON_URLS.cart}
+          className="hidden lg:block w-[18px] h-[18px] xl:w-[20px] xl:h-[20px] 2xl:w-[24px] 2xl:h-[24px] object-fill cursor-pointer"
+          alt="Cart"
+        />
+        <div className="flex flex-col items-end gap-[6px] 2xl:gap-2 cursor-pointer">
+          <div className="bg-white w-6 lg:w-[26px] xl:w-[28px] 2xl:w-8 h-[2.5px]" />
+          <div className="bg-white w-4 lg:w-[18px] xl:w-[20px] 2xl:w-[22px] h-[2.5px]" />
+        </div>
+      </div>
+    </motion.nav>
+  );
+}
+
+export default Navbar;
