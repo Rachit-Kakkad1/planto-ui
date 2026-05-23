@@ -38,16 +38,16 @@ function Navbar() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-      className="fixed top-0 left-0 w-full z-[100] flex items-center px-4 md:px-8 lg:px-[40px] xl:px-[57px] py-2 lg:py-3 2xl:py-4 bg-[#1B2316]/80 backdrop-blur-md border-b border-white/5"
+      className="fixed top-0 left-0 w-full z-[100] flex items-center px-4 md:px-8 lg:px-[40px] xl:px-[57px] py-1 lg:py-2 2xl:py-2 bg-[#1B2316]/80 backdrop-blur-md border-b border-white/5"
     >
       {/* Brand */}
       <div className="flex items-center gap-0 cursor-pointer">
         <img
           src="/main_logo.png"
-          className="w-10 h-10 lg:w-12 lg:h-12 xl:w-14 xl:h-14 2xl:w-16 2xl:h-16 object-contain scale-[2.2] lg:scale-[3] ml-2 lg:ml-6 origin-center"
+          className="w-8 h-8 lg:w-10 lg:h-10 xl:w-12 xl:h-12 2xl:w-14 2xl:h-14 object-contain scale-[3] lg:scale-[3.5] ml-2 lg:ml-4 origin-center"
           alt="Planto logo"
         />
-        <span className="-ml-1 lg:-ml-2 text-white text-base lg:text-lg xl:text-xl 2xl:text-2xl font-bold tracking-wide">
+        <span className="-ml-1 lg:-ml-2 text-white text-sm lg:text-base xl:text-lg 2xl:text-xl font-bold tracking-wide">
           Planto.
         </span>
       </div>
@@ -72,7 +72,7 @@ function Navbar() {
                 visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
               }}
               whileHover={{ scale: 1.05, color: "#4ADE80", textShadow: "0px 0px 10px rgba(74,222,128,0.3)" }}
-              className="text-white text-[15px] lg:text-[16px] xl:text-[18px] 2xl:text-[20px] uppercase tracking-wider font-medium cursor-pointer transition-colors flex items-center gap-1"
+              className="text-white text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px] uppercase tracking-wider font-medium cursor-pointer transition-colors flex items-center gap-1"
             >
               {link} {link === "Plants Type" && "▾"}
             </motion.span>
