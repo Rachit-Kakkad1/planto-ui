@@ -9,7 +9,6 @@ function ReviewCard({ name, avatar, rating, review, offsetClass }) {
       className={`relative group ${offsetClass} rounded-[40px]`}
       whileHover="hover"
       initial="rest"
-      animate="rest"
     >
       <div className="absolute inset-0 bg-gradient-to-b from-[#4ADE80]/20 to-transparent rounded-[40px] blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
       
