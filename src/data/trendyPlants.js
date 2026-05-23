@@ -1,8 +1,8 @@
 export const trendyPlants = [
   {
-    title: "For Small Decs Ai Plat",
+    title: "Small Desk Air Plant",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "Perfect for bringing life to your workspace. This low-maintenance plant purifies the air and adds a refreshing touch of green to any small desk or tabletop.",
     price: "Rs. 599/-",
     image:
       "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/n4iBIQ3cmY/5qzbbdk6_expires_30_days.png",
@@ -11,9 +11,9 @@ export const trendyPlants = [
     reversed: false,
   },
   {
-    title: "For Fresh Decs Ai Plat",
+    title: "Fresh Desk Air Plant",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "Create a calming atmosphere with this fresh desk companion. Known for its air-purifying qualities, it requires minimal sunlight and watering, making it ideal for busy professionals.",
     price: "Rs. 579/-",
     image:
       "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/n4iBIQ3cmY/6evjietd_expires_30_days.png",
