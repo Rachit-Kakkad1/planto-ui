@@ -4,7 +4,13 @@ A premium, modern e-commerce landing page built with React and TailwindCSS. Desi
 
 ## Preview
 
-> *[Insert full-page screenshot preview here]*
+Here is a glimpse of the different sections of the Planto landing page:
+
+![Trendy Plants](/screenshots/trendy_plants.png)
+![Top Selling](/screenshots/top_selling.png)
+![Our Best O2](/screenshots/best_o2.png)
+![Customer Reviews](/screenshots/customer_review.png)
+![Footer](/screenshots/footer.png)
 
 ## Live Demo
 
