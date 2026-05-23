@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const NAV_LINKS = ["Home", "Plants Type▾", "More", "Contact"];
 
@@ -10,8 +11,11 @@ const ICON_URLS = {
 };
 
 function Navbar() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
-    <motion.nav 
+    <>
+      <motion.nav 
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
@@ -59,7 +63,7 @@ function Navbar() {
       <div className="hidden lg:block flex-1" />
 
       {/* Desktop icons + Hamburger */}
-      <div className="flex items-center gap-5 xl:gap-6">
+      <div className="flex items-center gap-5 xl:gap-6 z-50">
         <img
           src={ICON_URLS.search}
           className="hidden lg:block w-[18px] h-[18px] xl:w-[20px] xl:h-[20px] 2xl:w-[24px] 2xl:h-[24px] object-fill cursor-pointer"
@@ -70,12 +74,67 @@ function Navbar() {
           className="hidden lg:block w-[18px] h-[18px] xl:w-[20px] xl:h-[20px] 2xl:w-[24px] 2xl:h-[24px] object-fill cursor-pointer"
           alt="Cart"
         />
-        <div className="flex flex-col items-end gap-[6px] 2xl:gap-2 cursor-pointer">
+        
+        {/* Mobile Hamburger (animates to X) */}
+        <div 
+          className="flex lg:hidden flex-col items-end gap-[6px] 2xl:gap-2 cursor-pointer relative z-50"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          <motion.div 
+            animate={isMobileMenuOpen ? { rotate: 45, y: 8.5 } : { rotate: 0, y: 0 }}
+            className="bg-white w-6 lg:w-[26px] xl:w-[28px] 2xl:w-8 h-[2.5px]" 
+          />
+          <motion.div 
+            animate={isMobileMenuOpen ? { rotate: -45, y: 0, width: "1.5rem" } : { rotate: 0, y: 0, width: "1rem" }}
+            className="bg-white w-4 lg:w-[18px] xl:w-[20px] 2xl:w-[22px] h-[2.5px]" 
+          />
+        </div>
+
+        {/* Desktop Hamburger (static) */}
+        <div className="hidden lg:flex flex-col items-end gap-[6px] 2xl:gap-2 cursor-pointer">
           <div className="bg-white w-6 lg:w-[26px] xl:w-[28px] 2xl:w-8 h-[2.5px]" />
           <div className="bg-white w-4 lg:w-[18px] xl:w-[20px] 2xl:w-[22px] h-[2.5px]" />
         </div>
       </div>
     </motion.nav>
+
+    {/* Mobile Menu Overlay */}
+    <AnimatePresence>
+      {isMobileMenuOpen && (
+        <motion.div
+          initial={{ opacity: 0, y: "-100%" }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: "-100%" }}
+          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          className="fixed inset-0 bg-[#1B2316]/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center lg:hidden"
+        >
+          <div className="flex flex-col items-center gap-8">
+            {NAV_LINKS.map((link, i) => (
+              <motion.span
+                key={link}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 + i * 0.1, duration: 0.5 }}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-white text-2xl font-medium cursor-pointer hover:text-[#4ADE80] transition-colors"
+              >
+                {link}
+              </motion.span>
+            ))}
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.6 }}
+              className="flex items-center gap-6 mt-8"
+            >
+              <img src={ICON_URLS.search} className="w-6 h-6" alt="Search" />
+              <img src={ICON_URLS.cart} className="w-6 h-6" alt="Cart" />
+            </motion.div>
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+    </>
   );
 }
 
