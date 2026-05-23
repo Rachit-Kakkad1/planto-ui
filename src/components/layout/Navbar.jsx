@@ -41,13 +41,13 @@ function Navbar() {
       className="fixed top-0 left-0 w-full z-[100] flex items-center px-4 md:px-8 lg:px-[40px] xl:px-[57px] py-1 lg:py-2 2xl:py-2 bg-[#1B2316]/80 backdrop-blur-md border-b border-white/5"
     >
       {/* Brand */}
-      <div className="flex items-center gap-0 cursor-pointer">
+      <div className="flex items-center cursor-pointer">
         <img
           src="/main_logo.png"
-          className="w-8 h-8 lg:w-10 lg:h-10 xl:w-12 xl:h-12 2xl:w-14 2xl:h-14 object-contain scale-[2.5] lg:scale-[3] ml-2 lg:ml-4 origin-top-left"
+          className="w-16 h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24 2xl:w-[100px] 2xl:h-[100px] object-contain -my-8 lg:-my-12 -ml-2 lg:-ml-4 translate-y-2 lg:translate-y-3 scale-[1.2] lg:scale-[1.4]"
           alt="Planto logo"
         />
-        <span className="-ml-1 lg:-ml-2 text-white text-sm lg:text-base xl:text-lg 2xl:text-xl font-bold tracking-wide">
+        <span className="-ml-2 lg:-ml-4 text-white text-base lg:text-lg xl:text-xl 2xl:text-2xl font-bold tracking-wide">
           Planto.
         </span>
       </div>
