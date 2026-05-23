@@ -47,7 +47,7 @@ function Navbar() {
           className="w-16 h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24 2xl:w-[100px] 2xl:h-[100px] object-contain -my-8 lg:-my-12 -ml-2 lg:-ml-4 translate-y-2 lg:translate-y-3 scale-[1.2] lg:scale-[1.4]"
           alt="Planto logo"
         />
-        <span className="-ml-2 lg:-ml-4 text-white text-base lg:text-lg xl:text-xl 2xl:text-2xl font-bold tracking-wide">
+        <span className="-ml-4 lg:-ml-8 text-white text-lg lg:text-xl xl:text-2xl 2xl:text-3xl font-bold tracking-wide">
           Planto.
         </span>
       </div>
