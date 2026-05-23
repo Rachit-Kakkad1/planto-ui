@@ -44,7 +44,7 @@ function Navbar() {
       <div className="flex items-center gap-2 xl:gap-3 cursor-pointer">
         <img
           src="/main_logo.png"
-          className="w-10 h-10 lg:w-12 lg:h-12 xl:w-14 xl:h-14 2xl:w-16 2xl:h-16 object-contain"
+          className="w-12 h-12 lg:w-16 lg:h-16 xl:w-20 xl:h-20 2xl:w-24 2xl:h-24 object-contain scale-[1.5] lg:scale-[1.8] ml-2 lg:ml-4"
           alt="Planto logo"
         />
         <span className="text-white text-xl lg:text-2xl xl:text-3xl 2xl:text-[34px] font-bold tracking-wide">

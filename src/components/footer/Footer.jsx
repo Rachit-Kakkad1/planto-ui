@@ -12,7 +12,7 @@ function Footer() {
           <div className="flex items-center gap-4">
             <img
               src="/main_logo.png"
-              className="w-[60px] h-[60px] object-contain"
+              className="w-[80px] h-[80px] lg:w-[100px] lg:h-[100px] object-contain scale-[1.5] ml-4"
               alt="Planto logo"
             />
             <span className="text-white text-[36px] font-bold">Planto.</span>
