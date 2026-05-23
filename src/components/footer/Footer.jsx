@@ -39,7 +39,7 @@ function Footer() {
           {QUICK_LINKS.map((link) => (
             <a
               key={link}
-              href="#"
+              href="/"
               className="text-white/80 text-[16px] hover:text-white transition-colors"
             >
               {link}
@@ -75,7 +75,7 @@ function Footer() {
           {SOCIAL_LINKS.map((link) => (
             <a
               key={link.name}
-              href="#"
+              href="/"
               className="text-white hover:text-white/80 transition-colors"
             >
               {link.icon}
