@@ -5,7 +5,7 @@ function ReviewCard({ name, avatar, starsImage, review, offsetClass }) {
     <motion.div 
       animate={{ y: [0, -6, 0] }}
       transition={{ duration: 6, ease: "easeInOut", repeat: Infinity }}
-      className={`relative group ${offsetClass} overflow-hidden rounded-[40px]`}
+      className={`relative group ${offsetClass} rounded-[40px]`}
       whileHover="hover"
       initial="rest"
       animate="rest"

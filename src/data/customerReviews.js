@@ -1,7 +1,7 @@
 export const customerReviews = [
   {
     name: "Maxn Raval",
-    avatar: "/a1.png",
+    avatar: "https://randomuser.me/api/portraits/men/32.jpg",
     starsImage:
       "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/n4iBIQ3cmY/e2sgi2ew_expires_30_days.png",
     review:
@@ -9,8 +9,8 @@ export const customerReviews = [
     offsetClass: "mt-12 lg:mt-16",
   },
   {
-    name: "venely k",
-    avatar: "/a2.png",
+    name: "Venely K.",
+    avatar: "https://randomuser.me/api/portraits/women/44.jpg",
     starsImage:
       "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/n4iBIQ3cmY/07dfpava_expires_30_days.png",
     review:
@@ -18,8 +18,8 @@ export const customerReviews = [
     offsetClass: "mt-12 lg:mt-28",
   },
   {
-    name: "Lii thakur",
-    avatar: "/a3.png",
+    name: "Lii Thakur",
+    avatar: "https://randomuser.me/api/portraits/women/68.jpg",
     starsImage:
       "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/n4iBIQ3cmY/qs66413h_expires_30_days.png",
     review:
