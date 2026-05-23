@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const NAV_LINKS = ["Home", "Plants Type▾", "More", "Contact"];
+const NAV_LINKS = ["Home", "Plants Type", "More", "Contact"];
+const PLANT_TYPES = ["Indoor Plants", "Outdoor Plants", "Office Plants", "Succulents"];
 
 const ICON_URLS = {
   search:
@@ -12,6 +13,18 @@ const ICON_URLS = {
 
 function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobilePlantsOpen, setIsMobilePlantsOpen] = useState(false);
+
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMobileMenuOpen]);
 
   return (
     <>
@@ -43,20 +56,34 @@ function Navbar() {
           hidden: {},
           visible: { transition: { staggerChildren: 0.1, delayChildren: 0.5 } }
         }}
-        className="hidden lg:flex items-center gap-6 xl:gap-9 2xl:gap-12"
+        className="hidden lg:flex items-center gap-6 xl:gap-9 2xl:gap-12 relative"
       >
         {NAV_LINKS.map((link) => (
-          <motion.span
-            key={link}
-            variants={{
-              hidden: { opacity: 0, y: -10 },
-              visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
-            }}
-            whileHover={{ scale: 1.05, color: "#4ADE80", textShadow: "0px 0px 10px rgba(74,222,128,0.3)" }}
-            className="text-white text-[13px] xl:text-sm 2xl:text-base cursor-pointer transition-colors"
-          >
-            {link}
-          </motion.span>
+          <div key={link} className="relative group py-4">
+            <motion.span
+              variants={{
+                hidden: { opacity: 0, y: -10 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
+              }}
+              whileHover={{ scale: 1.05, color: "#4ADE80", textShadow: "0px 0px 10px rgba(74,222,128,0.3)" }}
+              className="text-white text-[13px] xl:text-sm 2xl:text-base cursor-pointer transition-colors flex items-center gap-1"
+            >
+              {link} {link === "Plants Type" && "▾"}
+            </motion.span>
+            
+            {/* Desktop Dropdown for Plants Type */}
+            {link === "Plants Type" && (
+              <div className="absolute top-full left-0 mt-[-10px] w-48 bg-[#1B2316]/95 backdrop-blur-xl border border-white/10 rounded-xl overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:mt-0 transition-all duration-300 z-50 shadow-2xl">
+                <div className="flex flex-col py-2">
+                  {PLANT_TYPES.map((type) => (
+                    <span key={type} className="text-white/80 hover:text-[#4ADE80] hover:bg-white/5 px-4 py-2.5 text-[13px] xl:text-sm cursor-pointer transition-colors">
+                      {type}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
         ))}
       </motion.div>
 
@@ -108,27 +135,57 @@ function Navbar() {
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="fixed inset-0 bg-[#1B2316]/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center lg:hidden"
         >
-          <div className="flex flex-col items-center gap-8">
+          <div className="flex flex-col items-center gap-6 overflow-y-auto max-h-[80vh] w-full px-6 pb-10 scrollbar-hide">
             {NAV_LINKS.map((link, i) => (
-              <motion.span
-                key={link}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 + i * 0.1, duration: 0.5 }}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="text-white text-2xl font-medium cursor-pointer hover:text-[#4ADE80] transition-colors"
-              >
-                {link}
-              </motion.span>
+              <div key={link} className="flex flex-col items-center w-full">
+                <motion.span
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 + i * 0.1, duration: 0.5 }}
+                  onClick={() => {
+                    if (link === "Plants Type") {
+                      setIsMobilePlantsOpen(!isMobilePlantsOpen);
+                    } else {
+                      setIsMobileMenuOpen(false);
+                    }
+                  }}
+                  className="text-white text-2xl font-medium cursor-pointer hover:text-[#4ADE80] transition-colors flex items-center gap-2"
+                >
+                  {link} {link === "Plants Type" && (isMobilePlantsOpen ? "▴" : "▾")}
+                </motion.span>
+
+                {/* Mobile Dropdown for Plants Type */}
+                <AnimatePresence>
+                  {link === "Plants Type" && isMobilePlantsOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="flex flex-col items-center gap-4 mt-6 overflow-hidden w-full"
+                    >
+                      {PLANT_TYPES.map((type) => (
+                        <span 
+                          key={type} 
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          className="text-white/70 text-lg cursor-pointer hover:text-[#4ADE80] transition-colors"
+                        >
+                          {type}
+                        </span>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
             ))}
             <motion.div 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
-              className="flex items-center gap-6 mt-8"
+              className="flex items-center gap-8 mt-6"
             >
-              <img src={ICON_URLS.search} className="w-6 h-6" alt="Search" />
-              <img src={ICON_URLS.cart} className="w-6 h-6" alt="Cart" />
+              <img src={ICON_URLS.search} className="w-7 h-7" alt="Search" />
+              <img src={ICON_URLS.cart} className="w-7 h-7" alt="Cart" />
             </motion.div>
           </div>
         </motion.div>
