@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { bestO2Plants } from "../../data/bestO2Plants";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const ARROW_ICONS = {
   prev: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/n4iBIQ3cmY/t49a4ja5_expires_30_days.png",
@@ -134,18 +134,29 @@ function BestO2Section() {
 
           {/* Info panel */}
           <div className="w-full lg:w-[55%] flex flex-col gap-4 lg:gap-6 relative z-30">
-            <h3 className="text-white/90 text-[20px] lg:text-[24px] font-semibold leading-snug">
-              {slide.title}
-            </h3>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentSlide}
+                initial={{ opacity: 0, y: 15, filter: "blur(4px)" }}
+                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                exit={{ opacity: 0, y: -15, filter: "blur(4px)" }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+                className="flex flex-col gap-4 lg:gap-6"
+              >
+                <h3 className="text-white/90 text-[20px] lg:text-[24px] font-semibold leading-snug">
+                  {slide.title}
+                </h3>
 
-            <div className="flex flex-col gap-4">
-              <p className="text-white/70 text-[14px] lg:text-[15px] leading-[1.6] font-light">
-                {slide.desc1}
-              </p>
-              <p className="text-white/70 text-[14px] lg:text-[15px] leading-[1.6] font-light">
-                {slide.desc2}
-              </p>
-            </div>
+                <div className="flex flex-col gap-4">
+                  <p className="text-white/70 text-[14px] lg:text-[15px] leading-[1.6] font-light">
+                    {slide.desc1}
+                  </p>
+                  <p className="text-white/70 text-[14px] lg:text-[15px] leading-[1.6] font-light">
+                    {slide.desc2}
+                  </p>
+                </div>
+              </motion.div>
+            </AnimatePresence>
 
             {/* Controls Row */}
             <div className="flex items-center justify-between mt-4">

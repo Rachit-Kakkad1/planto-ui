@@ -55,15 +55,26 @@ function PlantSliderCard() {
 
       {/* Content padding to make room for image */}
       <div className="mt-[70px] xl:mt-[90px] px-8 xl:px-10 w-full flex flex-col items-start">
-        <span className="text-[#E0E0E0] text-[12px] xl:text-[14px] block mb-1 xl:mb-2 transition-all">
-          {slide.category}
-        </span>
-        <div className="flex items-center justify-between w-full mb-5 xl:mb-7">
-          <span className="text-white text-[20px] xl:text-[26px] font-medium whitespace-nowrap transition-all">
-            {slide.title}
-          </span>
+        <div className="flex justify-between w-full mb-5 xl:mb-7">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentSlide}
+              initial={{ opacity: 0, y: 15, filter: "blur(4px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              exit={{ opacity: 0, y: -15, filter: "blur(4px)" }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              className="flex flex-col items-start"
+            >
+              <span className="text-[#E0E0E0] text-[12px] xl:text-[14px] block mb-1 xl:mb-2">
+                {slide.category}
+              </span>
+              <span className="text-white text-[20px] xl:text-[26px] font-medium whitespace-nowrap">
+                {slide.title}
+              </span>
+            </motion.div>
+          </AnimatePresence>
           <button
-            className="text-white text-3xl xl:text-4xl font-normal cursor-pointer hover:opacity-80 transition-opacity p-2 -mr-2 bg-transparent border-none outline-none"
+            className="text-white text-3xl xl:text-4xl font-normal cursor-pointer hover:opacity-80 transition-opacity p-2 -mr-2 bg-transparent border-none outline-none self-center"
             onClick={nextSlide}
           >
             ›
