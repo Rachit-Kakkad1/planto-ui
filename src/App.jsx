@@ -23,8 +23,12 @@ function App() {
     }
 
     requestAnimationFrame(raf);
+    
+    // Expose lenis globally for pausing scroll
+    window.lenis = lenis;
 
     return () => {
+      window.lenis = null;
       lenis.destroy();
     };
   }, []);
