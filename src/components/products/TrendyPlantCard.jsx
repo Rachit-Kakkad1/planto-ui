@@ -32,10 +32,10 @@ function TrendyPlantCard({
       </div>
       
       {/* Plant Image */}
-      <div className="w-full lg:w-1/2 flex justify-center relative z-10">
+      <div className="w-full lg:w-1/2 flex justify-center relative z-10 -mt-12 lg:mt-0 mb-2 lg:mb-0">
         <img
           src={image}
-          className={`w-[70%] sm:w-[60%] lg:w-[125%] xl:w-[120%] h-auto max-w-none object-contain drop-shadow-[0_30px_30px_rgba(0,0,0,0.5)] lg:absolute lg:top-1/2 lg:-translate-y-[55%] ${
+          className={`w-[100%] sm:w-[90%] lg:w-[125%] xl:w-[120%] h-auto max-w-none object-contain drop-shadow-[0_30px_30px_rgba(0,0,0,0.5)] lg:absolute lg:top-1/2 lg:-translate-y-[55%] scale-110 lg:scale-100 ${
             reversed ? "lg:-right-[5%]" : "lg:-left-[10%]"
           } pointer-events-none`}
           alt={title}
