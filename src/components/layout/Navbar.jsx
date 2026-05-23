@@ -18,13 +18,16 @@ function Navbar() {
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
       window.lenis?.stop();
     } else {
       document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
       window.lenis?.start();
     }
     return () => {
       document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
       window.lenis?.start();
     };
   }, [isMobileMenuOpen]);
@@ -132,11 +135,12 @@ function Navbar() {
     <AnimatePresence>
       {isMobileMenuOpen && (
         <motion.div
+          data-lenis-prevent="true"
           initial={{ opacity: 0, y: "-100%" }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: "-100%" }}
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed inset-0 bg-[#1B2316]/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center lg:hidden"
+          className="fixed inset-0 bg-[#1B2316]/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center lg:hidden overscroll-none"
         >
           <div className="flex flex-col items-center gap-6 overflow-y-auto max-h-[80vh] w-full px-6 pb-10 scrollbar-hide">
             {NAV_LINKS.map((link, i) => (
