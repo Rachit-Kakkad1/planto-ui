@@ -38,16 +38,16 @@ function Navbar() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-      className="flex items-center px-4 md:px-8 lg:px-[40px] xl:px-[57px] py-4 lg:py-5 2xl:py-6 mb-4 lg:mb-8 bg-[#1B231680]"
+      className="fixed top-0 left-0 w-full z-[100] flex items-center px-4 md:px-8 lg:px-[40px] xl:px-[57px] py-3 lg:py-4 2xl:py-5 bg-[#1B2316]/80 backdrop-blur-md border-b border-white/5"
     >
       {/* Brand */}
       <div className="flex items-center gap-2 xl:gap-3 cursor-pointer">
         <img
           src="/main_logo.png"
-          className="w-12 h-12 lg:w-16 lg:h-16 xl:w-20 xl:h-20 2xl:w-24 2xl:h-24 object-contain scale-[1.5] lg:scale-[1.8] ml-2 lg:ml-4"
+          className="w-16 h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24 2xl:w-[120px] 2xl:h-[120px] object-contain scale-[1.5] lg:scale-[1.8] ml-2 lg:ml-6 origin-center"
           alt="Planto logo"
         />
-        <span className="text-white text-xl lg:text-2xl xl:text-3xl 2xl:text-[34px] font-bold tracking-wide">
+        <span className="text-white text-lg lg:text-xl xl:text-2xl 2xl:text-3xl font-bold tracking-wide">
           Planto.
         </span>
       </div>

@@ -10,7 +10,7 @@ const HERO_BG_URL =
 function HeroSection() {
   return (
     <section
-      className="relative overflow-hidden bg-cover bg-center pt-0 pb-8 lg:pb-10 xl:pb-[51px] mb-10 md:mb-[143px]"
+      className="relative overflow-hidden bg-cover bg-center pt-[100px] lg:pt-[120px] 2xl:pt-[140px] pb-8 lg:pb-10 xl:pb-[51px] mb-10 md:mb-[143px]"
       style={{ backgroundImage: `url(${HERO_BG_URL})` }}
     >
       <Navbar />
