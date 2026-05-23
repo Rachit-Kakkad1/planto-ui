@@ -12,7 +12,7 @@ Designed to simulate a luxury digital storefront experience with layered atmosph
 
 Dark cinematic atmosphere with floating product cards, volumetric glow, and glassmorphism overlays.
 
-![Hero Section](./public/screenshots/hero.png)
+![Hero Section](./public/screenshots/hero_section.png)
 
 ---
 
