@@ -72,7 +72,7 @@ function Navbar() {
                 visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
               }}
               whileHover={{ scale: 1.05, color: "#4ADE80", textShadow: "0px 0px 10px rgba(74,222,128,0.3)" }}
-              className="text-white text-[13px] xl:text-sm 2xl:text-base cursor-pointer transition-colors flex items-center gap-1"
+              className="text-white text-[15px] lg:text-[16px] xl:text-[18px] 2xl:text-[20px] uppercase tracking-wider font-medium cursor-pointer transition-colors flex items-center gap-1"
             >
               {link} {link === "Plants Type" && "▾"}
             </motion.span>
@@ -156,7 +156,7 @@ function Navbar() {
                       setIsMobileMenuOpen(false);
                     }
                   }}
-                  className="text-white text-2xl font-medium cursor-pointer hover:text-[#4ADE80] transition-colors flex items-center gap-2"
+                  className="text-white text-2xl uppercase tracking-wider font-medium cursor-pointer hover:text-[#4ADE80] transition-colors flex items-center gap-2"
                 >
                   {link} {link === "Plants Type" && (isMobilePlantsOpen ? "▴" : "▾")}
                 </motion.span>
