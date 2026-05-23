@@ -32,10 +32,10 @@ function TrendyPlantCard({
       </div>
       
       {/* Plant Image */}
-      <div className="w-full lg:w-1/2 flex justify-center relative z-10 -mt-12 lg:mt-0 mb-2 lg:mb-0">
+      <div className="w-full lg:w-1/2 flex justify-center relative z-10 -mt-16 sm:-mt-20 lg:mt-0 -mb-8 lg:mb-0">
         <img
           src={image}
-          className={`w-[100%] sm:w-[90%] lg:w-[125%] xl:w-[120%] h-auto max-w-none object-contain drop-shadow-[0_30px_30px_rgba(0,0,0,0.5)] lg:absolute lg:top-1/2 lg:-translate-y-[55%] scale-110 lg:scale-100 ${
+          className={`w-[115%] sm:w-[105%] lg:w-[125%] xl:w-[120%] h-auto max-w-none object-contain drop-shadow-[0_30px_30px_rgba(0,0,0,0.5)] lg:absolute lg:top-1/2 lg:-translate-y-[55%] scale-125 lg:scale-100 ${
             reversed ? "lg:-right-[5%]" : "lg:-left-[10%]"
           } pointer-events-none`}
           alt={title}
@@ -44,7 +44,7 @@ function TrendyPlantCard({
 
       {/* Text Content */}
       <div
-        className={`w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left gap-2 lg:gap-3 xl:gap-4 mt-6 lg:mt-0 z-10 ${
+        className={`w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left gap-2 lg:gap-3 xl:gap-4 mt-2 lg:mt-0 z-10 ${
           reversed ? "lg:pr-16 xl:pr-20" : "lg:pl-16 xl:pl-20"
         } py-0 lg:py-6 xl:py-8`}
       >
