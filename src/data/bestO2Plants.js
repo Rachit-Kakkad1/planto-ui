@@ -1,7 +1,7 @@
 export const bestO2Plants = [
   {
     image: "/plant-1.png",
-    imageScale: "scale-[1.0]",
+    imageScale: "scale-[1.4] lg:scale-[1.5]",
     title: "Breathe Easier with Our Premium Air-Purifying Collection",
     desc1:
       'Transform your indoor space into a lush, breathable sanctuary. Our carefully curated "Best O2" collection features high-oxygen producing plants that naturally filter toxins and revitalize the air you breathe every day.',
