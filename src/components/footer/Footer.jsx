@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
-import { Facebook, Twitter, Linkedin } from "lucide-react";
+import { FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
 
 const QUICK_LINKS = ["Home", "Type's Of plant's", "Contact", "Privacy"];
 const SOCIAL_LINKS = [
-  { name: "FB", icon: <Facebook size={24} /> },
-  { name: "TW", icon: <Twitter size={24} /> },
-  { name: "LI", icon: <Linkedin size={24} /> }
+  { name: "FB", icon: <FaFacebook size={24} /> },
+  { name: "TW", icon: <FaTwitter size={24} /> },
+  { name: "LI", icon: <FaLinkedin size={24} /> }
 ];
 
 function Footer() {
