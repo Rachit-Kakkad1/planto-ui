@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
+import { Star, StarHalf } from "lucide-react";
 
-function ReviewCard({ name, avatar, starsImage, review, offsetClass }) {
+function ReviewCard({ name, avatar, rating, review, offsetClass }) {
   return (
     <motion.div 
       animate={{ y: [0, -6, 0] }}
@@ -38,11 +39,17 @@ function ReviewCard({ name, avatar, starsImage, review, offsetClass }) {
           <span className="text-white text-[24px] lg:text-[28px] font-bold tracking-wide">
             {name}
           </span>
-          <img
-            src={starsImage}
-            className="h-3.5 lg:h-4 w-auto object-contain drop-shadow-[0_0_8px_rgba(253,224,71,0.6)] group-hover:drop-shadow-[0_0_12px_rgba(253,224,71,0.9)] transition-all duration-500"
-            alt="Rating stars"
-          />
+          <div className="flex items-center gap-1 drop-shadow-[0_0_8px_rgba(253,224,71,0.6)] group-hover:drop-shadow-[0_0_12px_rgba(253,224,71,0.9)] transition-all duration-500">
+            {[...Array(5)].map((_, i) => {
+              const starValue = i + 1;
+              if (rating >= starValue) {
+                return <Star key={i} className="w-4 h-4 lg:w-[18px] lg:h-[18px] fill-[#FDE047] text-[#FDE047]" />;
+              } else if (rating >= starValue - 0.5) {
+                return <StarHalf key={i} className="w-4 h-4 lg:w-[18px] lg:h-[18px] fill-[#FDE047] text-[#FDE047]" />;
+              }
+              return <Star key={i} className="w-4 h-4 lg:w-[18px] lg:h-[18px] text-white/20" />;
+            })}
+          </div>
         </div>
 
         <p className="text-white/80 text-[16px] lg:text-[17px] leading-[1.8] font-light relative z-10">
