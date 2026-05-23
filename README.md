@@ -12,7 +12,7 @@ Designed to simulate a luxury digital storefront experience with layered atmosph
 
 Dark cinematic atmosphere with floating product cards, volumetric glow, and glassmorphism overlays.
 
-![Hero Section](/screenshots/hero.png)
+![Hero Section](./public/screenshots/hero.png)
 
 ---
 
@@ -20,7 +20,7 @@ Dark cinematic atmosphere with floating product cards, volumetric glow, and glas
 
 Featured floating product showcase with layered blur backgrounds and premium product emphasis.
 
-![Trendy Plants](/screenshots/trendy_plants.png)
+![Trendy Plants](./public/screenshots/trendy_plants.png)
 
 ---
 
@@ -28,7 +28,7 @@ Featured floating product showcase with layered blur backgrounds and premium pro
 
 Reusable responsive product card system with hover interactions and glass effects.
 
-![Top Selling](/screenshots/top_selling.png)
+![Top Selling](./public/screenshots/top_selling.png)
 
 ---
 
@@ -36,7 +36,7 @@ Reusable responsive product card system with hover interactions and glass effect
 
 Soft elevated testimonial cards with staggered responsive layouts and subtle depth transitions.
 
-![Customer Reviews](/screenshots/customer_review.png)
+![Customer Reviews](./public/screenshots/customer_review.png)
 
 ---
 
@@ -44,7 +44,7 @@ Soft elevated testimonial cards with staggered responsive layouts and subtle dep
 
 Interactive cinematic featured section highlighting premium plant collections.
 
-![Our Best O2](/screenshots/best_o2.png)
+![Our Best O2](./public/screenshots/best_o2.png)
 
 ---
 
@@ -52,7 +52,7 @@ Interactive cinematic featured section highlighting premium plant collections.
 
 Minimal premium footer with newsletter subscription and navigation hierarchy.
 
-![Footer](/screenshots/footer.png)
+![Footer](./public/screenshots/footer.png)
 
 ---
 
