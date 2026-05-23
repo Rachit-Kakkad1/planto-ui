@@ -11,7 +11,7 @@ function Footer() {
         <div className="flex flex-col items-start gap-6 lg:gap-8 max-w-full lg:max-w-[400px]">
           <div className="flex items-center gap-4">
             <img
-              src="/logo.png"
+              src="/main_logo.png"
               className="w-[60px] h-[60px] object-contain"
               alt="Planto logo"
             />

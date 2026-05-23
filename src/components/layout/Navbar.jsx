@@ -43,7 +43,7 @@ function Navbar() {
       {/* Brand */}
       <div className="flex items-center gap-2 xl:gap-3 cursor-pointer">
         <img
-          src="/logo.png"
+          src="/main_logo.png"
           className="w-10 h-10 lg:w-12 lg:h-12 xl:w-14 xl:h-14 2xl:w-16 2xl:h-16 object-contain"
           alt="Planto logo"
         />
