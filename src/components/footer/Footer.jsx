@@ -1,12 +1,17 @@
 import { motion } from "framer-motion";
+import { Facebook, Twitter, Linkedin } from "lucide-react";
 
 const QUICK_LINKS = ["Home", "Type's Of plant's", "Contact", "Privacy"];
-const SOCIAL_LINKS = ["FB", "TW", "LI"];
+const SOCIAL_LINKS = [
+  { name: "FB", icon: <Facebook size={24} /> },
+  { name: "TW", icon: <Twitter size={24} /> },
+  { name: "LI", icon: <Linkedin size={24} /> }
+];
 
 function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-[#222B1C] py-16 md:py-24">
-      <div className="flex flex-col lg:flex-row lg:justify-between gap-12 lg:gap-8 px-6 md:px-16 lg:px-24 mb-16 lg:mb-32">
+    <footer className="relative overflow-hidden bg-[#222B1C] py-10 md:py-14">
+      <div className="flex flex-col lg:flex-row lg:justify-between gap-12 lg:gap-8 px-6 md:px-16 lg:px-24 mb-10 lg:mb-16">
         {/* Brand */}
         <div className="flex flex-col items-start gap-6 lg:gap-8 max-w-full lg:max-w-[400px]">
           <div className="flex items-center cursor-pointer">
@@ -15,7 +20,7 @@ function Footer() {
               className="w-16 h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24 2xl:w-[100px] 2xl:h-[100px] object-contain -ml-2 lg:-ml-4 translate-y-2 lg:translate-y-3 scale-[1.2] lg:scale-[1.4]"
               alt="Planto logo"
             />
-            <span className="-ml-4 lg:-ml-8 text-white text-[28px] lg:text-[36px] font-bold tracking-wide">
+            <span className="-ml-2 lg:-ml-5 text-white text-[28px] lg:text-[36px] font-bold tracking-wide">
               Planto.
             </span>
           </div>
@@ -69,11 +74,11 @@ function Footer() {
         <div className="flex items-center gap-8">
           {SOCIAL_LINKS.map((link) => (
             <a
-              key={link}
+              key={link.name}
               href="#"
-              className="text-white text-[18px] font-bold hover:text-white/80 transition-colors"
+              className="text-white hover:text-white/80 transition-colors"
             >
-              {link}
+              {link.icon}
             </a>
           ))}
         </div>
