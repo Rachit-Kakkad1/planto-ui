@@ -19,7 +19,7 @@ function ScrollReveal({ children }) {
 }
 function HomePage() {
   return (
-    <div className="flex flex-col bg-white w-full max-w-full overflow-x-hidden">
+    <div className="flex flex-col bg-white w-full max-w-full">
       <div className="self-stretch bg-[#1B2316]">
         {/* Cinematic Ambient Background */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
